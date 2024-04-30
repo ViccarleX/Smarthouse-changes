@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejecutor de Órdenes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    .header-color {
+      background-color: #4B0082; /* Color morado oscuro */
+    }
+
+    .footer-color {
+      background-color: #4B0082; /* Color morado oscuro */
+    }
+  </style>
+</head>
+<body>
+  <header class="header-color py-3">
+    <div class="container">
+      <h1 class="text-center text-white">Ejecutor de Órdenes por Voz</h1>
+    </div>
+  </header>
+
+  <main class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Última Orden Recibida</h5>
+        <p id="last-command">Esperando orden...</p>
+      </div>
+    </div>
+<style>
+    .plano-casa {
+      position: relative;
+      width: 100%; /* Ajusta esto según tus necesidades */
+      max-width: 736px; /* Ancho de tu imagen */
+      margin: auto;
+    }
+    .dispositivo {
+      position: absolute;
+      /*cursor: pointer;*/
+      transition: transform 0.3s ease;
+    }
+    /*.dispositivo:hover {
+      transform: scale(1.1);
+    }*/
+  
+    .foco-recamara {
+    width: 50px; /* tamaño específico para los focos */
+    height: auto;
+    }
+  
+    .foco-sala {
+    width: 50px; /* tamaño específico para los focos */
+    height: auto;
+    }
+  
+    .foco-jardin1 {
+    width: 50px; /* tamaño específico para los focos */
+    height: auto;
+    }
+
+    .foco-jardin2 {
+    width: 50px; /* tamaño específico para los focos */
+    height: auto;
+    }
+
+    .foco-jardin3 {
+    width: 50px; /* tamaño específico para los focos */
+    height: auto;
+    }
+
+    .foco-jardin4 {
+    width: 50px; /* tamaño específico para los focos */
+    height: auto;
+    }
+
+    .foco-jardin5 {
+    width: 50px; /* tamaño específico para los focos */
+    height: auto;
+    }
+    
+    .ventilador {
+    width: 50px; /* tamaño específico para los focos */
+    height: auto;
+    }
+  
+    .cortina1 {
+    width: 80px; /* tamaño específico para los focos */
+    height: 45px;
+    }
+  
+    .cortina2 {
+    width: 80px; /* tamaño específico para los focos */
+    height: 45px;
+    }
+  
+    .alarma {
+      width: 30px;
+      height: auto;
+    }
+  
+    .camara1 {
+      width: 50px;
+      height: auto;
+    }
+  
+    .camara2 {
+      width: 50px;
+      height: auto;
+    }
+
+    .camara3 {
+      width: 50px;
+      height: auto;
+    }
+  
+    /* Posiciones específicas para los dispositivos, ajusta según sea necesario */
+    
+    .foco-sala { top: 250px; left: 240px; }
+    .foco-recamara { top: 520px; right: 210px; }
+    .foco-jardin1 { top: 710px; right: 250px}
+    .foco-jardin2 { top: 500px; right: 110px}
+    .foco-jardin3 { top: 150px; right: 130px}
+    .foco-jardin4 { top: 50px; right: 350px}
+    .foco-jardin5 { top: 250px; left: 110px}
+    .ventilador { top: 150px; left: 320px}
+    .cortina1 { top: 100px; left: 250px}
+    .cortina2 { top: 100px; right: 250px}
+    .alarma { top: 540px; right: 378px}
+    .camara1 {top: 610px; right: 290px;}
+    .camara2 {top: 450px; left: 180px;}
+    .camara3 {top: 100px; left: 210px;}
+    /* ... */
+  </style>
+  </head>
+  <body>
+  
+  <div class="plano-casa">
+    <img src="img/casa.jpg" alt="Plano de la Casa">
+    
+    <!-- Dispositivos -->
+    <img src="img/foco_off.png" alt="Foco Recámara" class="dispositivo foco-recamara">
+    <img src="img/foco_off.png" alt="Foco Sala" class="dispositivo foco-sala">
+    <img src="img/foco_off.png" alt="Foco jardin1" class="dispositivo foco-jardin1">
+    <img src="img/foco_off.png" alt="Foco jardin2" class="dispositivo foco-jardin2">
+    <img src="img/foco_off.png" alt="Foco jardin3" class="dispositivo foco-jardin3">
+    <img src="img/foco_off.png" alt="Foco jardin4" class="dispositivo foco-jardin4">
+    <img src="img/foco_off.png" alt="Foco jardin5" class="dispositivo foco-jardin5">
+    <img src="img/v_off.png" alt="Ventilador" class="dispositivo ventilador">
+    <img src="img/cortina1.png" alt="Cortina1" class="dispositivo cortina1">
+    <img src="img/cortina1.png" alt="Cortina2" class="dispositivo cortina2">
+    <img src="img/alarma_off.png" alt="Alarma" class="dispositivo alarma">
+    <img src="img/c_off.png" alt="Camara1" class="dispositivo camara1">
+    <img src="img/c_off.png" alt="Camara2" class="dispositivo camara2">
+    <img src="img/c_off.png" alt="Camara3" class="dispositivo camara3">
+    <!-- Repite para cada dispositivo con su clase y posición correspondiente -->
+  </div>
+  <audio id="alarma-sound" src="img/alarma.mp3"></audio>
+  </main>
+
+  <footer class="footer-color py-3 text-center fixed-bottom">
+    <div class="container">
+      <span class="text-muted">Todos los derechos reservados &copy; 2024</span>
+    </div>
+  </footer>
+  <!-- Elemento de audio para el sonido de la alarma -->
+
+
+  <script src="script.js"></script>
+</body>
+</html>
