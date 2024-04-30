@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
           case 'apaga las cámaras de seguridad':
             document.querySelector('.camara1').src = 'img/c_off.png';
             document.querySelector('.camara2').src = 'img/c_off.png';
-            document.querySelector('.camara3').src = 'img/c_off.gif';
+            document.querySelector('.camara3').src = 'img/c_off.png';
             break;
           default:
             console.log('Comando no reconocido o no ejecutable en este contexto');
